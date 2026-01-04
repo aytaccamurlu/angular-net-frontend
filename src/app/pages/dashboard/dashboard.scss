@@ -1,0 +1,46 @@
+.erp-layout {
+  display: flex;
+  height: 100vh;
+  background-color: #f4f7f6;
+
+  .sidebar {
+    width: 260px;
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+
+    .logo { font-size: 1.5rem; font-weight: bold; margin-bottom: 30px; color: #3498db; }
+    .nav-item {
+      display: block; padding: 12px; color: #bdc3c7; text-decoration: none;
+      margin-bottom: 5px; border-radius: 5px; cursor: pointer;
+      &:hover, &.active { background: #34495e; color: white; }
+    }
+  }
+
+  .main-content {
+    flex: 1; padding: 30px;
+    .top-nav {
+      display: flex; justify-content: space-between; margin-bottom: 30px;
+      background: white; padding: 15px 25px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+  }
+
+  .stats-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;
+  }
+
+  .stat-card {
+    background: white; padding: 25px; border-radius: 12px; display: flex; 
+    justify-content: space-between; align-items: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-left: 5px solid #ccc;
+    &.blue { border-left-color: #3498db; }
+    &.green { border-left-color: #2ecc71; }
+    &.orange { border-left-color: #f39c12; }
+    &.red { border-left-color: #e74c3c; }
+    h3 { margin: 5px 0 0; font-size: 1.8rem; }
+    p { margin: 0; color: #7f8c8d; }
+    .icon { font-size: 2rem; }
+  }
+}
+
+.logout-btn { background: #e74c3c; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; margin-left: 10px; }

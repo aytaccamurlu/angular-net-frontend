@@ -1,0 +1,64 @@
+<div class="erp-layout">
+    <aside class="sidebar">
+        <div class="logo">B2B ERP v1.0</div>
+        <nav>
+            <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                class="nav-item">📊 Genel Bakış</a>
+
+            <a routerLink="/dashboard/products" class="nav-item">📦 Ürün Yönetimi</a>
+
+            <a routerLink="/dashboard/orders" class="nav-item">🛒 Siparişler</a>
+            <a routerLink="/dashboard/customers" class="nav-item">👥 Bayi Listesi</a>
+            <a routerLink="/dashboard/settings" class="nav-item">⚙️ Sistem Ayarları</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-nav">
+            <span class="page-title">Yönetim Paneli</span>
+            <div class="user-profile">
+                <span>Hoş geldin, <strong>{{ user.full_name || 'Misafir' }}</strong></span>
+                <span class="role-badge">{{ user.role }}</span>
+                <button (click)="cikisYap()" class="logout-btn">Çıkış</button>
+            </div>
+        </header>
+
+        <div class="content-body">
+            <router-outlet></router-outlet>
+        </div>
+
+        <div class="stats-grid" *ngIf="router.url === '/dashboard'">
+            <div class="stat-card blue">
+                <div class="info">
+                    <p>Toplam Satış</p>
+                    <h3>₺142.500</h3>
+                </div>
+                <span class="icon">💰</span>
+            </div>
+
+            <div class="stat-card green">
+                <div class="info">
+                    <p>Aktif Bayiler</p>
+                    <h3>84</h3>
+                </div>
+                <span class="icon">🏢</span>
+            </div>
+
+            <div class="stat-card orange">
+                <div class="info">
+                    <p>Bekleyen Sipariş</p>
+                    <h3>12</h3>
+                </div>
+                <span class="icon">⏳</span>
+            </div>
+
+            <div class="stat-card red">
+                <div class="info">
+                    <p>Stok Uyarısı</p>
+                    <h3>5</h3>
+                </div>
+                <span class="icon">⚠️</span>
+            </div>
+        </div>
+    </main>
+</div>
